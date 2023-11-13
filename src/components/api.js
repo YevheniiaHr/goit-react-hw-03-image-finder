@@ -10,6 +10,6 @@ export const fetchImages = async (query, currentPage) => {
 };
 
 export const sortedImages = array =>
-  array.map(({ id, tags, webformatURL, largeImageUrl }) => {
-    return { id, tags, webformatURL, largeImageUrl };
+  array.map(({ id, tags, webformatURL, largeImageURL }) => {
+    return { id, tags, webformatURL, largeImageURL };
   });

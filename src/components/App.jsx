@@ -44,17 +44,17 @@ export class App extends Component {
 
     try {
       this.setState({ isLoading: true });
-      const images = await fetchImages(searchItem, currentPage);
-      if (images.hits.length === 0) {
-        return toast.info('Sorry image not found!');
+      const data = await fetchImages(searchItem, currentPage);
+      if (data.hits.length === 0) {
+        return toast.error('Sorry image not found!');
       }
-      const normalizedImg = sortedImages(images.hits);
+      const normalizedImg = sortedImages(data.hits);
 
       this.setState(state => ({
         imgItems: [...state.imgItems, ...normalizedImg],
         isLoading: false,
         error: '',
-        totalPages: Math.ceil(images.totalHits / 12),
+        totalPages: Math.ceil(data.totalHits / 12),
       }));
     } catch (error) {
       this.setState({ error: 'Something went wrong!' });
@@ -73,7 +73,7 @@ export class App extends Component {
         ) : (
           <p
             style={{
-              padding: 150,
+              padding: 10,
               textAlign: 'center',
               fontSize: 32,
             }}
@@ -85,7 +85,7 @@ export class App extends Component {
         {imgItems.length > 0 && totalPages !== currentPage && !isLoading && (
           <Button onClick={this.loadMore} />
         )}
-        <Toaster />
+        <Toaster position="top-right" />
       </Container>
     );
   }

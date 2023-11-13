@@ -1,6 +1,10 @@
 import Modal from 'react-modal';
 
 const customStyles = {
+  overlay: {
+    width: '100vw',
+    height: '100vh',
+  },
   content: {
     top: '50%',
     left: '50%',
