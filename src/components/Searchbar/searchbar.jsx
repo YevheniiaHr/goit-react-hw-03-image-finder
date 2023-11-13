@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  SearchbarHeader,
-  Form,
-  Input,
-  SearchButton,
-  Icon,
-} from './Searchbar.styled';
+import { SearchbarHeader, Form, Input, SearchButton } from './Searchbar.styled';
 
 export default class Searchbar extends Component {
   state = {
@@ -35,7 +29,7 @@ export default class Searchbar extends Component {
             value={this.state.input}
             onChange={this.handleChange}
           />
-          <SearchButton>{/* <Icon></Icon> */}</SearchButton>
+          <SearchButton></SearchButton>
         </Form>
       </SearchbarHeader>
     );
