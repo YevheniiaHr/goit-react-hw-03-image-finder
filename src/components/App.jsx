@@ -1,10 +1,11 @@
 import { Component } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { Container } from './App.styled';
-import { Searchbar } from './Searchbar/Searchbar';
 import { fetchImages, sortedImages } from './api.js';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import { Loader } from './Loader/Loader';
+import { Searchbar } from './Searchbar/Searchbar';
 
 export class App extends Component {
   state = {
@@ -45,7 +46,7 @@ export class App extends Component {
       this.setState({ isLoading: true });
       const images = await fetchImages(searchItem, currentPage);
       if (images.hits.length === 0) {
-        console.log('something went wrong');
+        return toast.info('Sorry image not found!');
       }
       const normalizedImg = sortedImages(images.hits);
 
@@ -70,12 +71,21 @@ export class App extends Component {
         {imgItems.length > 0 ? (
           <ImageGallery images={imgItems} />
         ) : (
-          <p>"Gallery is empty"</p>
+          <p
+            style={{
+              padding: 150,
+              textAlign: 'center',
+              fontSize: 32,
+            }}
+          >
+            Gallery is empty
+          </p>
         )}
         {isLoading && <Loader />}
         {imgItems.length > 0 && totalPages !== currentPage && !isLoading && (
           <Button onClick={this.loadMore} />
         )}
+        <Toaster />
       </Container>
     );
   }

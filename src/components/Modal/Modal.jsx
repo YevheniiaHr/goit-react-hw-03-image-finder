@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import { ModalContent, Overlay } from './Modal.styled';
+import { ModalContent } from './Modal.styled';
 
 const customStyles = {
   content: {
@@ -20,7 +20,7 @@ export const ModalWindow = ({ isOpen, onClose, largeImageURL }) => {
       style={customStyles}
       contentLabel="Image"
     >
-      <ModalContent largeImageURL={largeImageURL}></ModalContent>
+      <ModalContent largeImageURL={largeImageURL} />
     </Modal>
   );
 };
