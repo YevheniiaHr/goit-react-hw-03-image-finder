@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { SearchbarHeader, Form, Input, SearchButton } from './Searchbar.styled';
+import { BsSearch } from 'react-icons/bs';
+import {
+  SearchBarHeader,
+  SearchForm,
+  SearchInput,
+  SearchButton,
+} from './SearchBar.styled';
 
-export class Searchbar extends Component {
+export class SearchBar extends Component {
   state = {
     searchItem: '',
     input: '',
@@ -20,18 +26,20 @@ export class Searchbar extends Component {
   };
   render() {
     return (
-      <SearchbarHeader>
-        <Form onSubmit={this.handleSubmit}>
-          <Input
+      <SearchBarHeader>
+        <SearchForm onSubmit={this.handleSubmit}>
+          <SearchButton>
+            <BsSearch />
+          </SearchButton>
+          <SearchInput
             name="searchItem"
             type="text"
             id="search"
             value={this.state.input}
             onChange={this.handleChange}
           />
-          <SearchButton></SearchButton>
-        </Form>
-      </SearchbarHeader>
+        </SearchForm>
+      </SearchBarHeader>
     );
   }
 }

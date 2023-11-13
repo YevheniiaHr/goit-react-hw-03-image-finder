@@ -5,7 +5,7 @@ import { fetchImages, sortedImages } from './api.js';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import { Loader } from './Loader/Loader';
-import { Searchbar } from './Searchbar/Searchbar';
+import { SearchBar } from './SearchBar/SearchBar';
 
 export class App extends Component {
   state = {
@@ -67,7 +67,7 @@ export class App extends Component {
     const { imgItems, isLoading, currentPage, totalPages } = this.state;
     return (
       <Container>
-        <Searchbar onSubmit={this.handleSubmit} />
+        <SearchBar onSubmit={this.handleSubmit} />
         {imgItems.length > 0 ? (
           <ImageGallery images={imgItems} />
         ) : (
