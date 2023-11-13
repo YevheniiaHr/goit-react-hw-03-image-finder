@@ -26,9 +26,7 @@ export class ImageGalleryItem extends Component {
             src={image.webformatURL}
             alt={image.tags}
             onClick={this.openModal}
-          >
-            {image}
-          </GalleryImg>
+          />
 
           <ModalWindow
             isOpen={isModalOpen}

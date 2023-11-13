@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SearchbarHeader, Form, Input, SearchButton } from './Searchbar.styled';
 
-export default class Searchbar extends Component {
+export class Searchbar extends Component {
   state = {
     searchItem: '',
     input: '',

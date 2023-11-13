@@ -14,15 +14,13 @@ const customStyles = {
 Modal.setAppElement('#root');
 export const ModalWindow = ({ isOpen, onClose, largeImageURL }) => {
   return (
-    <Overlay>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onClose}
-        style={customStyles}
-        contentLabel="Image"
-      >
-        <ModalContent largeImageURL={largeImageURL}></ModalContent>
-      </Modal>
-    </Overlay>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      style={customStyles}
+      contentLabel="Image"
+    >
+      <ModalContent largeImageURL={largeImageURL}></ModalContent>
+    </Modal>
   );
 };
