@@ -27,6 +27,9 @@ export class App extends Component {
   }
 
   handleSubmit = query => {
+    if (this.state.searchItem === query) {
+      return toast.error(`You are already browsing ${query}`);
+    }
     this.setState({
       searchItem: query,
       imgItems: [],
