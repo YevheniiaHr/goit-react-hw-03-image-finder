@@ -5,7 +5,7 @@ import { fetchImages, sortedImages } from './api.js';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import { Loader } from './Loader/Loader';
-import { SearchBar } from './SearchBar/SearchBar';
+import { SearchBar } from './Searchbar/searchbar';
 
 export class App extends Component {
   state = {

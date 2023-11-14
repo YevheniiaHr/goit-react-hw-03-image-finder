@@ -2,8 +2,12 @@ import Modal from 'react-modal';
 
 const customStyles = {
   overlay: {
+    position: 'fixed',
     width: '100vw',
     height: '100vh',
+    zIndex: '1200',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    overflow: 'aria-hidden',
   },
   content: {
     top: '50%',
